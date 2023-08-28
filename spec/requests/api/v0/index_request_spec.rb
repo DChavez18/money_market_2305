@@ -7,5 +7,13 @@ describe "Markets API" do
     get '/api/v0/markets'
 
     expect(response).to be_successful
+
+    markets = JSON.parse(response.body)
+require 'pry'; binding.pry
+    markets.each do |market|
+      expect(market).to have_key("id")
+      expect(market["id"]).to be_an(Integer)
+
+    end
   end
 end
