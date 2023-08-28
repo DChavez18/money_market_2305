@@ -8,17 +8,40 @@
           1,
           1,
           1,
+          1,
+          null,
+          1,
+          5,
+          null,
           null,
           1,
           null,
           1,
           null,
           1,
-          1,
-          0,
-          0,
-          0,
           null,
+          1,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
           null,
           null,
           null
@@ -284,6 +307,19 @@
           null
         ]
       },
+      "/Users/derekchavez/3mod/projects/market_money/spec/factories/vendors.rb": {
+        "lines": [
+          1,
+          1,
+          11,
+          11,
+          11,
+          11,
+          11,
+          null,
+          null
+        ]
+      },
       "/Users/derekchavez/3mod/projects/market_money/config/routes.rb": {
         "lines": [
           1,
@@ -319,6 +355,22 @@
           null
         ]
       },
+      "/Users/derekchavez/3mod/projects/market_money/app/models/vendor.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/derekchavez/3mod/projects/market_money/app/models/market_vendor.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
       "/Users/derekchavez/3mod/projects/market_money/app/controllers/api/v0/markets_controller.rb": {
         "lines": [
           1,
@@ -333,24 +385,8 @@
           1,
           null
         ]
-      },
-      "/Users/derekchavez/3mod/projects/market_money/app/models/market_vendor.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/derekchavez/3mod/projects/market_money/app/models/vendor.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
       }
     },
-    "timestamp": 1693257236
+    "timestamp": 1693258869
   }
 }

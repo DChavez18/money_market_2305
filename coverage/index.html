@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2023-08-28T15:13:56-06:00">2023-08-28T15:13:56-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2023-08-28T15:41:09-06:00">2023-08-28T15:41:09-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
-  95.79%
+  99.19%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.42
+         2.47
        </span>
     </span> hits/line
     )
@@ -39,15 +39,15 @@
   <a name="AllFiles"></a>
 
   <div>
-    <b>17</b> files in total.
+    <b>18</b> files in total.
   </div>
 
   <div class="t-line-summary">
-    <b>95</b> relevant lines,
-    <span class="green"><b>91</b> lines covered</span> and
-    <span class="red"><b>4</b> lines missed. </span>
+    <b>123</b> relevant lines,
+    <span class="green"><b>122</b> lines covered</span> and
+    <span class="red"><b>1</b> lines missed. </span>
     (<span class="green">
-  95.79%
+  99.19%
 </span>
 )
   </div>
@@ -236,6 +236,17 @@
           </tr>
         
           <tr class="t-file">
+            <td class="strong t-file__name"><a href="#a5af77c3d5ec2d2a11fb5a2c43478a472db1aaa0" class="src_link" title="spec/factories/vendors.rb">spec/factories/vendors.rb</a></td>
+            <td class="green strong cell--number t-file__coverage">100.00 %</td>
+            <td class="cell--number">9</td>
+            <td class="cell--number">7</td>
+            <td class="cell--number">7</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">8.14</td>
+            
+          </tr>
+        
+          <tr class="t-file">
             <td class="strong t-file__name"><a href="#b3276e6379c6b0e18e29ae74514979c04af8678a" class="src_link" title="spec/rails_helper.rb">spec/rails_helper.rb</a></td>
             <td class="green strong cell--number t-file__coverage">92.31 %</td>
             <td class="cell--number">64</td>
@@ -248,12 +259,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#7894db0051352d9113da5f6716002dec170d70d2" class="src_link" title="spec/requests/api/v0/index_request_spec.rb">spec/requests/api/v0/index_request_spec.rb</a></td>
-            <td class="red strong cell--number t-file__coverage">72.73 %</td>
-            <td class="cell--number">19</td>
-            <td class="cell--number">11</td>
-            <td class="cell--number">8</td>
-            <td class="cell--number">3</td>
-            <td class="cell--number">0.73</td>
+            <td class="green strong cell--number t-file__coverage">100.00 %</td>
+            <td class="cell--number">42</td>
+            <td class="cell--number">32</td>
+            <td class="cell--number">32</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">3.75</td>
             
           </tr>
         
@@ -2917,6 +2928,136 @@
 </div>
 
       
+        <div class="source_table" id="a5af77c3d5ec2d2a11fb5a2c43478a472db1aaa0">
+  <div class="header">
+    <h3>spec/factories/vendors.rb</h3>
+    <h4>
+      <span class="green">
+  100.0%
+</span>
+
+      lines covered
+    </h4>
+
+    
+
+    <div class="t-line-summary">
+      <b>7</b> relevant lines.
+      <span class="green"><b>7</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+
+    
+
+  </div>
+
+  <pre>
+    <ol>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="1">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">FactoryBot.define do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="2">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  factory :vendor do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="11" data-linenumber="3">
+            <span class="hits">11</span>
+            
+
+            
+
+            <code class="ruby">    name { Faker::Company.name }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="11" data-linenumber="4">
+            <span class="hits">11</span>
+            
+
+            
+
+            <code class="ruby">    description { Faker::Lorem.sentence }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="11" data-linenumber="5">
+            <span class="hits">11</span>
+            
+
+            
+
+            <code class="ruby">    contact_name { Faker::Name.name }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="11" data-linenumber="6">
+            <span class="hits">11</span>
+            
+
+            
+
+            <code class="ruby">    contact_phone { Faker::PhoneNumber.phone_number }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="11" data-linenumber="7">
+            <span class="hits">11</span>
+            
+
+            
+
+            <code class="ruby">    credit_accepted { Faker::Boolean.boolean }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="8">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="9">
+            
+            
+
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+    </ol>
+  </pre>
+</div>
+
+      
         <div class="source_table" id="b3276e6379c6b0e18e29ae74514979c04af8678a">
   <div class="header">
     <h3>spec/rails_helper.rb</h3>
@@ -3656,8 +3797,8 @@
   <div class="header">
     <h3>spec/requests/api/v0/index_request_spec.rb</h3>
     <h4>
-      <span class="red">
-  72.73%
+      <span class="green">
+  100.0%
 </span>
 
       lines covered
@@ -3666,9 +3807,9 @@
     
 
     <div class="t-line-summary">
-      <b>11</b> relevant lines.
-      <span class="green"><b>8</b> lines covered</span> and
-      <span class="red"><b>3</b> lines missed.</span>
+      <b>32</b> relevant lines.
+      <span class="green"><b>32</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
 
     
@@ -3729,12 +3870,23 @@
 
             
 
-            <code class="ruby">    create_list(:market, 5)</code>
+            <code class="ruby">    markets = create_list(:market, 5)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="6">
+          <li class="covered" data-hits="1" data-linenumber="6">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    vendors = create_list(:vendor, 10)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="7">
             
             
 
@@ -3745,35 +3897,24 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="7">
+          <li class="covered" data-hits="1" data-linenumber="8">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    get &#39;/api/v0/markets&#39;</code>
+            <code class="ruby">    markets.each do |market|</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="8">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="9">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="5" data-linenumber="9">
+            <span class="hits">5</span>
             
 
             
 
-            <code class="ruby">    expect(response).to be_successful</code>
+            <code class="ruby">      market.vendors &lt;&lt; vendors.sample(rand(1..3))</code>
           </li>
         </div>
       
@@ -3784,18 +3925,18 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="11">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="11">
+            
             
 
             
 
-            <code class="ruby">    markets = JSON.parse(response.body)</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -3806,45 +3947,12 @@
 
             
 
-            <code class="ruby">require &#39;pry&#39;; binding.pry</code>
+            <code class="ruby">    get &#39;/api/v0/markets&#39;</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="13">
-            
-            
-
-            
-
-            <code class="ruby">    markets.each do |market|</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="14">
-            
-            
-
-            
-
-            <code class="ruby">      expect(market).to have_key(&quot;id&quot;)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="15">
-            
-            
-
-            
-
-            <code class="ruby">      expect(market[&quot;id&quot;]).to be_an(Integer)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="16">
+          <li class="never" data-hits="" data-linenumber="13">
             
             
 
@@ -3855,7 +3963,293 @@
         </div>
       
         <div>
+          <li class="covered" data-hits="1" data-linenumber="14">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(response).to be_successful</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="15">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="16">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    markets = JSON.parse(response.body)</code>
+          </li>
+        </div>
+      
+        <div>
           <li class="never" data-hits="" data-linenumber="17">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="18">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    markets.each do |market|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="19">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">      expect(market).to have_key(&quot;id&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="20">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">      expect(market[&quot;id&quot;]).to be_a(Integer)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="21">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">      expect(market).to have_key(&quot;name&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="22">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">      expect(market[&quot;name&quot;]).to be_a(String)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="23">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">      expect(market).to have_key(&quot;street&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="24">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">      expect(market[&quot;street&quot;]).to be_a(String)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="25">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">      expect(market).to have_key(&quot;city&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="26">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">      expect(market[&quot;city&quot;]).to be_a(String)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="27">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">      expect(market).to have_key(&quot;county&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="28">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">      expect(market[&quot;county&quot;]).to be_a(String)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="29">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">      expect(market).to have_key(&quot;state&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="30">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">      expect(market[&quot;state&quot;]).to be_a(String)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="31">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">      expect(market).to have_key(&quot;zip&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="32">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">      expect(market[&quot;zip&quot;]).to be_a(String)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="33">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">      expect(market).to have_key(&quot;lat&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="34">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">      expect(market[&quot;lat&quot;]).to be_a(String)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="35">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">      expect(market).to have_key(&quot;lon&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="36">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">      expect(market[&quot;lon&quot;]).to be_a(String)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="37">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">      expect(market).to have_key(&quot;vendor_count&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="38">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">      expect(market[&quot;vendor_count&quot;]).to be_a(Integer)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="39">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">      expect(markets[0][&quot;vendor_count&quot;]).to eq(3)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="40">
             
             
 
@@ -3866,7 +4260,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="18">
+          <li class="never" data-hits="" data-linenumber="41">
             
             
 
@@ -3877,7 +4271,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="19">
+          <li class="never" data-hits="" data-linenumber="42">
             
             
 
