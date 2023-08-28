@@ -4,9 +4,13 @@ describe "Markets API" do
   it "returns a single market with its attrubutes including vendor_count" do
     market_1 = create(:market)
     vendor_1 = create(:vendor)
+    vendor_2 = create(:vendor)
+
+    market_1.vendors << vendor_1
+    market_1.vendors << vendor_2
 
     get "/api/v0/markets/#{market_1.id}"
-
+    
     expect(response).to be_successful
 
     market_data = JSON.parse(response.body)
@@ -29,5 +33,6 @@ describe "Markets API" do
     expect(market_data["lat"]).to be_a(String)
     expect(market_data).to have_key("lon")
     expect(market_data["lon"]).to be_a(String)
+    expect(market_1.vendor_count).to eq(2)
   end
 end
