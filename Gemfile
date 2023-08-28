@@ -57,3 +57,6 @@ group :test do
   gem "shoulda-matchers"
 end
 
+gem 'active_model_serializers'
+gem 'jsonapi-serializer'
+
