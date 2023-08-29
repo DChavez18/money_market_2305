@@ -40,8 +40,8 @@ RSpec.describe "Vendors API" do
       expect(response).to_not be_successful
       expect(response).to have_http_status(400)
       error_response = JSON.parse(response.body)
-      expect(error_response).to have_key('error')
-      expect(error_response['error']).to eq("Name can't be blank")
+      expect(error_response).to have_key('errors')
+      expect(error_response['errors']).to eq("Name can't be blank")
     end
   end
 end

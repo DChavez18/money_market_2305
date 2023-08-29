@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2023-08-29T15:55:09-06:00">2023-08-29T15:55:09-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2023-08-29T16:05:30-06:00">2023-08-29T16:05:30-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -483,7 +483,7 @@
 
             
 
-            <code class="ruby">      render json: { error: &quot;Vendor not found&quot; }, status: :not_found</code>
+            <code class="ruby">      render json: { errors: &quot;Vendor not found&quot; }, status: :not_found</code>
           </li>
         </div>
       
@@ -593,7 +593,7 @@
 
             
 
-            <code class="ruby">      render json: { error: @vendor.errors.full_messages.join(&#39;, &#39;) }, status: :bad_request</code>
+            <code class="ruby">      render json: { errors: @vendor.errors.full_messages.join(&#39;, &#39;) }, status: :bad_request</code>
           </li>
         </div>
       
@@ -4653,7 +4653,7 @@
 
             
 
-            <code class="ruby">      expect(error_response).to have_key(&#39;error&#39;)</code>
+            <code class="ruby">      expect(error_response).to have_key(&#39;errors&#39;)</code>
           </li>
         </div>
       
@@ -4664,7 +4664,7 @@
 
             
 
-            <code class="ruby">      expect(error_response[&#39;error&#39;]).to eq(&quot;Name can&#39;t be blank&quot;)</code>
+            <code class="ruby">      expect(error_response[&#39;errors&#39;]).to eq(&quot;Name can&#39;t be blank&quot;)</code>
           </li>
         </div>
       

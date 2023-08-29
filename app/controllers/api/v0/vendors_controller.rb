@@ -14,7 +14,7 @@ class Api::V0::VendorsController < ApplicationController
       vendor = Vendor.find(params[:id])
       render json: VendorSerializer.new(vendor)
     rescue ActiveRecord::RecordNotFound
-      render json: { error: "Vendor not found" }, status: :not_found
+      render json: { errors: "Vendor not found" }, status: :not_found
     end
   end
 
@@ -24,7 +24,7 @@ class Api::V0::VendorsController < ApplicationController
     if @vendor.save
       render json: VendorSerializer.new(@vendor), status: :created
     else
-      render json: { error: @vendor.errors.full_messages.join(', ') }, status: :bad_request
+      render json: { errors: @vendor.errors.full_messages.join(', ') }, status: :bad_request
     end
   end
 
