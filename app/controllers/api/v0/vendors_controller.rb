@@ -1,5 +1,11 @@
 class Api::V0::VendorsController < ApplicationController
   def index
-    render json: VendorSerializer.new(Vendor.all)
+    market = Market.find_by(id: params[:market_id])
+
+    if market.nil?
+      render json: { errors: "Market not found" }, status: :not_found
+    else
+      render json: VendorSerializer.new(market.vendors)
+    end
   end
 end
