@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe "Markets API" do
   describe "getting all vendors for a specific market" do
-    it "returns all vendors fror a market if a valid id is passed" do
+    it "returns all vendors from a market if a valid id is passed" do
       market_1 = create(:market)
       vendor_1 = create(:vendor)
       vendor_2 = create(:vendor)
