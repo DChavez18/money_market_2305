@@ -18,10 +18,29 @@
           1,
           null,
           1,
-          0,
+          1,
           null,
-          0,
+          1,
+          1,
+          1,
+          1,
           null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
           null,
           null,
           null
@@ -298,11 +317,11 @@
         "lines": [
           1,
           1,
-          2,
-          2,
-          2,
-          2,
-          2,
+          3,
+          3,
+          3,
+          3,
+          3,
           null,
           null
         ]
@@ -378,9 +397,20 @@
           null,
           null,
           1,
+          2,
+          null,
+          2,
+          1,
           null,
           1,
-          0,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          2,
           null,
           null
         ]
@@ -390,8 +420,16 @@
           1,
           null
         ]
+      },
+      "/Users/derekchavez/3mod/projects/market_money/app/serializers/vendor_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
       }
     },
-    "timestamp": 1693349078
+    "timestamp": 1693350136
   }
 }
