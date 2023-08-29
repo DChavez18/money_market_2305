@@ -31,7 +31,14 @@ RSpec.describe "Vendors API" do
     end
 
     it "returns a 404 status as well as a descriptive error message if invalid vendor id is passed" do
+      invalid_id = 123456789
 
+      get "/api/v0/vendors/#{invalid_id}"
+
+      expect(response).to have_http_status(404)
+      error_response = JSON.parse(response.body)
+      expect(error_response).to have_key("error")
+      expect(error_response["error"]).to eq("Vendor not found")
     end
   end
 end
