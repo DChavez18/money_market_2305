@@ -10,9 +10,8 @@ describe "Markets API" do
     end
 
     get '/api/v0/markets'
-
     expect(response).to be_successful
-
+    
     markets_response = JSON.parse(response.body)["data"]
 
     markets_response.each do |market_data|
@@ -36,7 +35,8 @@ describe "Markets API" do
       expect(attributes["lat"]).to be_a(String)
       expect(attributes).to have_key("lon")
       expect(attributes["lon"]).to be_a(String)
-      expect(markets[0].vendor_count).to eq(3)
+      expect(attributes).to have_key("vendor_count")
+      expect(attributes["vendor_count"]).to be_an(Integer)
     end
   end
 end
