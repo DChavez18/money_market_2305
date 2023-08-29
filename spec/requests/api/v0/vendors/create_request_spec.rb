@@ -11,13 +11,18 @@ RSpec.describe "Vendors API" do
         'credit_accepted': false
       }
 
-      headers = { "CONTENT_TYPE": "application/json "}
+      headers = { 'CONTENT_TYPE'=> 'application/json' }
 
       post "/api/v0/vendors", headers: headers, params: JSON.generate(vendor: vendor_params)
       new_vendor = Vendor.last
 
       expect(response).to be_successful
       expect(response.status).to eq(201)
+      expect(new_vendor.name).to eq("Buzzy Bees")
+      expect(new_vendor.description).to eq("local honey and wax products")
+      expect(new_vendor.contact_name).to eq("Berly Couwer")
+      expect(new_vendor.contact_phone).to eq("8389928383")
+      expect(new_vendor.credit_accepted).to eq(false)
     end
   end
 end
