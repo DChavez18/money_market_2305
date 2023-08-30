@@ -43,7 +43,7 @@ class Api::V0::MarketVendorsController < ApplicationController
         render json: { errors: "MarketVendor association not found" }, status: :not_found
       end
     else
-      render json: { errors: "Invalid market or vendor ID" }, status: :bad_request
+      render json: { errors: "Invalid market or vendor ID" }, status: 404
     end
   end
 

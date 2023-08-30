@@ -44,6 +44,21 @@ RSpec.describe "MarketVendors API" do
       expect(vendor_1.markets).to eq([])
     end
 
-    
+    it "returns a 404 status code and an error message if the MarketVendor can not be found with the vendor/market ids passed in" do
+      market_1 = create(:market)
+      invalid_id = 123456789
+
+      market_vendor_params = { market_id: market_1.id,
+                               vendor_id: invalid_id }
+
+      headers = { "CONTENT_TYPE": "application/json" }
+
+      delete "/api/v0/market_vendors", headers: headers, params: JSON.generate(market_vendor_params)
+
+      expect(response).to_not be_successful
+      expect(response).to have_http_status(404)
+      error_message = JSON.parse(response.body)["errors"]
+      expect(error_message).to eq("Invalid market or vendor ID")
+    end
   end
 end
