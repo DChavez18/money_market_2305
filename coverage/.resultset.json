@@ -16,7 +16,7 @@
           null,
           1,
           null,
-          0,
+          1,
           null,
           null,
           null
@@ -369,8 +369,75 @@
           1,
           null
         ]
+      },
+      "/Users/derekchavez/3mod/projects/market_money/app/controllers/api/v0/vendors_controller.rb": {
+        "lines": [
+          1,
+          1,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
+      },
+      "/Users/derekchavez/3mod/projects/market_money/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
       }
     },
-    "timestamp": 1693409882
+    "timestamp": 1693410654
   }
 }

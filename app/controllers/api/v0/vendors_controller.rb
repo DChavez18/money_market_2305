@@ -19,12 +19,12 @@ class Api::V0::VendorsController < ApplicationController
   end
 
   def create
-    @vendor = Vendor.new(vendor_params)
+    vendor = Vendor.new(vendor_params)
 
-    if @vendor.save
-      render json: VendorSerializer.new(@vendor), status: :created
+    if vendor.save
+      render json: VendorSerializer.new(vendor), status: :created
     else
-      render json: { errors: @vendor.errors.full_messages.join(', ') }, status: :bad_request
+      render json: { errors: vendor.errors.full_messages.join(', ') }, status: :bad_request
     end
   end
 
@@ -38,7 +38,17 @@ class Api::V0::VendorsController < ApplicationController
     end
   end
 
+  def destroy
+    vendor = Vendor.find(params[:id])
+    vendor.market_vendors.destroy_all
 
+    if vendor.destroy
+      render json: { message: "Vendor deleted successfully" }, status: 204
+    else
+      render json: { errors: vendor.errors.full_messages.join(', ') }, status: :bad_request
+    end
+  end
+  
   private
 
   def vendor_params
