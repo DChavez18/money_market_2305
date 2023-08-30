@@ -37,8 +37,8 @@ RSpec.describe "Vendors API" do
 
       expect(response).to have_http_status(404)
       error_response = JSON.parse(response.body)
-      expect(error_response).to have_key("error")
-      expect(error_response["error"]).to eq("Vendor not found")
+      expect(error_response).to have_key("errors")
+      expect(error_response["errors"]).to eq("Vendor not found")
     end
   end
 end
