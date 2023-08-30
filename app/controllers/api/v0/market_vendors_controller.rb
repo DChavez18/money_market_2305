@@ -26,6 +26,27 @@ class Api::V0::MarketVendorsController < ApplicationController
     render json: { errors: error.record.errors.full_messages.join(', ') }, status: :bad_request
   end
 
+  # refactor this create method
+  
+  def destroy
+    market = Market.find_by(id: market_vendor_params[:market_id])
+    vendor = Vendor.find_by(id: market_vendor_params[:vendor_id])
+
+    if market && vendor
+      market_vendor = MarketVendor.find_by(market: market, vendor: vendor)
+
+      if market_vendor
+        vendor.markets.delete(market) if vendor && market
+        market_vendor.destroy
+        render json: { message: "MarketVendor association destroyed successfully" }, status: 204
+      else
+        render json: { errors: "MarketVendor association not found" }, status: :not_found
+      end
+    else
+      render json: { errors: "Invalid market or vendor ID" }, status: :bad_request
+    end
+  end
+
   private
 
   def market_vendor_params
