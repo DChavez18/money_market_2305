@@ -39,16 +39,20 @@ class Api::V0::VendorsController < ApplicationController
   end
 
   def destroy
-    vendor = Vendor.find(params[:id])
-    vendor.market_vendors.destroy_all
-
-    if vendor.destroy
-      render json: { message: "Vendor deleted successfully" }, status: 204
-    else
-      render json: { errors: vendor.errors.full_messages.join(', ') }, status: :bad_request
+    begin
+      vendor = Vendor.find(params[:id])
+      vendor.market_vendors.destroy_all
+  
+      if vendor.destroy
+        render json: { message: "Vendor deleted successfully" }, status: 204
+      else
+        render json: { errors: vendor.errors.full_messages.join(', ') }, status: :bad_request
+      end
+    rescue ActiveRecord::RecordNotFound
+      render json: { errors: "Vendor not found" }, status: :not_found
     end
   end
-  
+
   private
 
   def vendor_params
