@@ -13,12 +13,13 @@ class Api::V0::MarketsController < ApplicationController
   end
 
   def search
-    if (params[:state].nil? && params[:city].present?) || search_params.empty?
+    if search_params.empty?
       render_invalid_search_response
     else
       render json: MarketSerializer.new(Market.search_all(search_params))
     end
   end
+  
 
   private
 

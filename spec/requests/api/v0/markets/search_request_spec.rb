@@ -3,9 +3,9 @@ require "rails_helper"
 RSpec.describe "Markets API" do
   describe "Search Markets by State, City and/or name" do
     before do
-      @market_1 = create(:market, name: "Market 1", city: "City 4", state: "CO")
-      @market_2 = create(:market, name: "Market 2", city: "City 5", state: "CO")
-      @market_3 = create(:market, name: "Market 3", city: "City 6", state: "CA")
+      @market_1 = create(:market, name: "Market 1", city: "City 1", state: "CO")
+      @market_2 = create(:market, name: "Market 2", city: "City 2", state: "CO")
+      @market_3 = create(:market, name: "Market 3", city: "City 3", state: "CA")
     end
 
     it "returns markets with state search" do
@@ -42,13 +42,78 @@ RSpec.describe "Markets API" do
     it "returns markets with state and city search" do
       headers = { 'CONTENT_TYPE' => 'application/json' }
 
-      get '/api/v0/markets/search?state=co&city=city%204', headers: headers
+      get '/api/v0/markets/search?state=co&city=city%201', headers: headers
 
       expect(response).to be_successful
       expect(response.status).to eq(200)
 
       data = JSON.parse(response.body)
+      expect(data).to have_key("data")
 
+      markets = data["data"]
+      expect(markets).to be_an(Array)
+      expect(markets.count).to eq(1)
+
+      market = markets[0]
+      expect(market["id"]).to eq(@market_1.id.to_s)
+      expect(market["attributes"]["name"]).to eq(@market_1.name)
+      expect(market["attributes"]["city"]).to eq(@market_1.city)
+      expect(market["attributes"]["state"]).to eq(@market_1.state)
+    end
+
+    it "returns markets with state, city, and name search" do
+      headers = { 'CONTENT_TYPE' => 'application/json' }
+    
+      get '/api/v0/markets/search?state=co&city=City%201&name=Market%201', headers: headers
+    
+      expect(response).to be_successful
+      expect(response.status).to eq(200)
+    
+      data = JSON.parse(response.body)
+      expect(data).to have_key("data")
+    
+      markets = data["data"]
+      expect(markets).to be_an(Array)
+      expect(markets.count).to eq(1)
+    
+      market = markets[0]
+      expect(market["id"]).to eq(@market_1.id.to_s)
+      expect(market["attributes"]["name"]).to eq(@market_1.name)
+      expect(market["attributes"]["city"]).to eq(@market_1.city)
+      expect(market["attributes"]["state"]).to eq(@market_1.state)
+    end
+
+    it "returns markets with state and name search" do
+      headers = { 'CONTENT_TYPE' => 'application/json' }
+
+      get '/api/v0/markets/search?state=co&name=Market%201', headers: headers
+
+      expect(response).to be_successful
+      expect(response.status).to eq(200)
+
+      data = JSON.parse(response.body)
+      expect(data).to have_key("data")
+
+      markets = data["data"]
+      expect(markets).to be_an(Array)
+      expect(markets.count).to eq(1)
+
+      market = markets[0]
+      expect(market["id"]).to eq(@market_1.id.to_s)
+      expect(market["attributes"]["name"]).to eq(@market_1.name)
+      expect(market["attributes"]["city"]).to eq(@market_1.city)
+      expect(market["attributes"]["state"]).to eq(@market_1.state)
+    end
+
+    it "returns markets with name search" do
+      headers = { 'CONTENT_TYPE' => 'application/json' }
+
+      get '/api/v0/markets/search?name=Market%201', headers: headers
+
+      expect(response).to be_successful
+      expect(response.status).to eq(200)
+
+      data = JSON.parse(response.body)
       expect(data).to have_key("data")
 
       markets = data["data"]
@@ -62,6 +127,4 @@ RSpec.describe "Markets API" do
       expect(market["attributes"]["state"]).to eq(@market_1.state)
     end
   end
-
-  
 end
