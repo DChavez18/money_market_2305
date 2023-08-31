@@ -13,7 +13,7 @@ class Api::V0::MarketsController < ApplicationController
   end
 
   def search
-    if search_params.empty?
+    if (params[:state].nil? && params[:city].present?) || search_params.empty?
       render_invalid_search_response
     else
       render json: MarketSerializer.new(Market.search_all(search_params))
@@ -29,5 +29,10 @@ class Api::V0::MarketsController < ApplicationController
 
   def search_params
     params.permit(:state, :city, :name)
+  end
+
+  def render_invalid_search_response
+    error_message = ErrorMessage.new("Invalid search parameters", 422)
+    render json: ErrorSerializer.serialize(error_message.message), status: 422
   end
 end

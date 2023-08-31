@@ -13,7 +13,7 @@ class Market < ApplicationRecord
     end
     results
   end
-  
+
   def self.search_by_state(state)
     where('state ILIKE ?', "%#{state}%")
   end

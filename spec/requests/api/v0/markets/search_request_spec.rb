@@ -126,5 +126,29 @@ RSpec.describe "Markets API" do
       expect(market["attributes"]["city"]).to eq(@market_1.city)
       expect(market["attributes"]["state"]).to eq(@market_1.state)
     end
+
+    it "can not search with just a city" do
+      headers = { 'CONTENT_TYPE' => 'application/json' }
+
+      get '/api/v0/markets/search?city=City%201', headers: headers
+
+      expect(response).to have_http_status(422)
+
+      data = JSON.parse(response.body)
+      expect(data).to have_key("errors")
+      expect(data["errors"][0]["detail"]).to eq("Invalid search parameters")
+    end
+
+    it "can not search with just city and name" do
+      headers = { 'CONTENT_TYPE' => 'application/json' }
+
+      get '/api/v0/markets/search?city=City%201&name=Market%201', headers: headers
+    
+      expect(response).to have_http_status(422)
+    
+      data = JSON.parse(response.body)
+      expect(data).to have_key("errors")
+      expect(data["errors"][0]["detail"]).to eq("Invalid search parameters")
+    end
   end
 end
