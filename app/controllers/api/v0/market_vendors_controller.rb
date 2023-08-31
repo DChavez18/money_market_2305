@@ -40,7 +40,7 @@ class Api::V0::MarketVendorsController < ApplicationController
         market_vendor.destroy
         render json: { message: "MarketVendor association destroyed successfully" }, status: 204
       else
-        render json: { errors: "MarketVendor association not found" }, status: :not_found
+        render json: { errors: "MarketVendor association not found" }, status: 204
       end
     else
       render json: { errors: "Invalid market or vendor ID" }, status: 404
