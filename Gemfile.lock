@@ -103,6 +103,8 @@ GEM
       faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
     faraday-net_http (3.0.2)
+    figaro (1.2.0)
+      thor (>= 0.14.0, < 2)
     globalid (1.1.0)
       activesupport (>= 5.0)
     hashdiff (1.0.1)
@@ -237,6 +239,7 @@ DEPENDENCIES
   factory_bot_rails
   faker
   faraday
+  figaro
   jsonapi-serializer
   launchy
   pg (~> 1.1)

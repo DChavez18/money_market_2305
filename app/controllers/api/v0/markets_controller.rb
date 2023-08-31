@@ -20,6 +20,13 @@ class Api::V0::MarketsController < ApplicationController
     end
   end
   
+  def nearest_atms
+    market = Market.find(params[:id])
+    atm_facade = AtmFacade.new
+    atms = atm_facade.find_nearby_atms(market.lat, market.lon)
+
+    render json: atms, status: :ok
+  end
 
   private
 

@@ -62,4 +62,5 @@ end
 # gem 'active_model_serializers'
 gem 'jsonapi-serializer'
 gem "faraday"
+gem "figaro"
 
