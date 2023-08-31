@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 31 Aug 2023 22:58:07 GMT
+      - Thu, 31 Aug 2023 23:24:33 GMT
       Content-Type:
       - application/json; charset=utf-8
       Vary:
@@ -27,13 +27,13 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Tracking-Id:
-      - b45efbde-bf9d-4ed3-909d-3f437e557961
+      - ca25955f-ab50-4a52-93e6-6b293f2bb8e3
       Access-Control-Expose-Headers:
       - Tracking-ID
       X-Apigee.target-Latency:
-      - '110'
+      - '76'
       X-Envoy-Upstream-Service-Time:
-      - '121'
+      - '88'
       Server:
       - tomtom
       X-Tomtom-Processed-By:
@@ -42,6 +42,6 @@ http_interactions:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: '{"summary":{"query":"cash_dispensers","queryType":"NON_NEAR","queryTime":107,"numResults":0,"offset":0,"totalResults":0,"fuzzyLevel":3,"geoBias":{"lat":35.077529,"lon":-106.600449},"geobiasCountry":"US"},"results":[]}'
-  recorded_at: Thu, 31 Aug 2023 22:58:07 GMT
+      string: '{"summary":{"query":"cash_dispensers","queryType":"NON_NEAR","queryTime":73,"numResults":0,"offset":0,"totalResults":0,"fuzzyLevel":3,"geoBias":{"lat":35.077529,"lon":-106.600449},"geobiasCountry":"US"},"results":[]}'
+  recorded_at: Thu, 31 Aug 2023 23:24:33 GMT
 recorded_with: VCR 6.2.0
