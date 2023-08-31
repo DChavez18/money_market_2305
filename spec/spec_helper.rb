@@ -15,6 +15,7 @@
 # See https://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 require "simplecov"
 require "factory_bot_rails"
+require 'webmock/rspec'
 
 SimpleCov.start
 RSpec.configure do |config|

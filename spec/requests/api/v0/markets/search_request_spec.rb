@@ -150,5 +150,33 @@ RSpec.describe "Markets API" do
       expect(data).to have_key("errors")
       expect(data["errors"][0]["detail"]).to eq("Invalid search parameters")
     end
+
+    it "returns single market when only one is found" do
+      headers = { 'CONTENT_TYPE' => 'application/json' }
+
+      get '/api/v0/markets/search?state=ca&city=City%203', headers: headers
+
+      expect(response).to be_successful
+      expect(response.status).to eq(200)
+
+      data = JSON.parse(response.body)
+      expect(data).to have_key("data")
+      expect(data["data"]).to be_an(Array)
+      expect(data["data"].length).to eq(1)
+    end
+
+    it "returns empty array when no markets are found" do
+      headers = { 'CONTENT_TYPE' => 'application/json' }
+
+      get '/api/v0/markets/search?state=tx', headers: headers
+
+      expect(response).to be_successful
+      expect(response.status).to eq(200)
+
+      data = JSON.parse(response.body)
+      expect(data).to have_key("data")
+      expect(data["data"]).to be_an(Array)
+      expect(data["data"]).to be_empty
+    end
   end
 end

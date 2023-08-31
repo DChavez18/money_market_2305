@@ -55,8 +55,11 @@ group :test do
   gem "launchy"
   gem "rspec-rails"
   gem "shoulda-matchers"
+  gem "webmock"
+  gem "vcr"
 end
 
-gem 'active_model_serializers'
+# gem 'active_model_serializers'
 gem 'jsonapi-serializer'
+gem "faraday"
 
